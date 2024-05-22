@@ -1,6 +1,7 @@
 package jacobland.org.mailsystem;
 
 import jacobland.org.mailsystem.model.Message;
+import jacobland.org.mailsystem.model.data.MessageRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,7 +19,10 @@ public class MailSystemApplication {
 		message1.setTitle("Hello");
 		message1.setMessage(("Hello, how are you today?"));
 
+		MessageRepo repo = context.getBean(MessageRepo.class);
+		repo.save(message1);
 
+		System.out.println(repo.findAll());
 
 
 	}
