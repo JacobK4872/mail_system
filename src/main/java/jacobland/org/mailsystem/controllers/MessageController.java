@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class HelloController {
+public class MessageController {
 
-    @GetMapping("hello")
+    @GetMapping("message")
     @ResponseBody
-    public String hello() {
+    public String message() {
         return "Hello, Spring!";
     }
 
@@ -18,5 +18,7 @@ public class HelloController {
     public String goodbye() {
         return "Goodbye, Spring!";
     }
+
+//    int result = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM MAIL_SYSTEM", integer.class);
 
 }
