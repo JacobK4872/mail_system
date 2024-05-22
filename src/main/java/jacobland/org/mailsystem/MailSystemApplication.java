@@ -14,13 +14,13 @@ public class MailSystemApplication {
 
         ApplicationContext context = SpringApplication.run(MailSystemApplication.class, args);
 
-        Message message1 = context.getBean(Message.class);
-		message1.setId(12);
-		message1.setTitle("Hello");
-		message1.setMessage(("Hello, how are you today?"));
+//        Message message1 = context.getBean(Message.class);
+//		message1.setId(14);
+//		message1.setTitle("howdy");
+//		message1.setMessage(("howdy, how are you today?"));
 
 		MessageRepo repo = context.getBean(MessageRepo.class);
-		repo.save(message1);
+//		repo.save(message1);
 
 		System.out.println(repo.findAll());
 
