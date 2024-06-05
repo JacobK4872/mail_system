@@ -37,17 +37,14 @@ public class MessageRepo {
 
         String sql = "select * from messages";
 
-        RowMapper<Message> mapper = new RowMapper<Message>() {
-            @Override
-            public Message mapRow(ResultSet rs, int rowNum) throws SQLException {
+        RowMapper<Message> mapper = (rs, rowNum) -> {
 
-                Message a = new Message();
-                a.setId(rs.getInt(1));
-                a.setTitle(rs.getString(2));
-                a.setMessage(rs.getString(3));
+            Message a = new Message();
+            a.setId(rs.getInt(1));
+            a.setTitle(rs.getString(2));
+            a.setMessage(rs.getString(3));
 
-                return a;
-            }
+            return a;
         };
 
         List<Message> messages = template.query(sql, mapper);
